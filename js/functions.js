@@ -162,7 +162,7 @@ function create_countries_cities_filters () {
 //    As you can see, all three functions below do basically the same thing.
 //    Abstract them to one function, and write the specification of that function.
 
-function create_filter(filter_type, DATA) {
+/*function create_filter(filter_type, DATA) {
   function create(data) {
     const dom = create_filter_element({
       parent: document.querySelector(`#${filter_type}_filter > ul`),
@@ -172,50 +172,74 @@ function create_filter(filter_type, DATA) {
     dom.dataset.id = data.id;
   }
   array_each(DATA, create);
-}
+}*/
 
 
 
-//  function create_levels_filter () {
-//    function create_level (level) {
-//      const dom = create_filter_element({
-//        parent: document.querySelector("#level_filter > ul"),
-//        class: "selected",
-//        textContent: level.name,
-//     });
-//      dom.dataset.id = level.id;
-//    }
-//    array_each(LEVELS, create_level);
-//  }
-// Create Subjects Filter
-//  function create_subjects_filter () {
-//   function create_subject (subject) {
-//      const dom = create_filter_element({
-//        parent: document.querySelector("#subject_filter > ul"),
-//        class: "selected",
-//       textContent: subject.name,
-//      });
-//      dom.dataset.id = subject.id;
-//   }
-//   array_each(SUBJECTS, create_subject);
-//  }
-// Create Search Field
-//  function create_language_filter () {
-//  function create_element (data) {
-//      const dom = create_filter_element({
-//        parent: document.querySelector("#language_filter > ul"),
-//        class: "selected",
-//        textContent: data.name,
-//     });
-//      dom.dataset.id = data.id;
-//   }
-//   array_each(LANGUAGES, create_element);
-//  }
+function create_levels_filter () {
+  function create_level (level) {
+    const dom = create_filter_element({
+      parent: document.querySelector("#level_filter > ul"),
+      class: "selected",
+      textContent: level.name,
+  });
 
+  dom.dataset.id = level.id;
+  }
+   array_each(LEVELS, create_level);
+  }
+
+
+/*Create Subjects Filter*/
+  function create_subjects_filter () {
+   function create_subject (subject) {
+      const dom = create_filter_element({
+        parent: document.querySelector("#subject_filter > ul"),
+        class: "selected",
+       textContent: subject.name,
+      });
+      dom.dataset.id = subject.id;
+   }
+   array_each(SUBJECTS, create_subject);
+  }
+
+/*Create Search Field*/
+  function create_language_filter () {
+    function create_element (data) {
+        const dom = create_filter_element({
+          parent: document.querySelector("#language_filter > ul"),
+          class: "selected",
+          textContent: data.name,
+      });
+        dom.dataset.id = data.id;
+    }
+    array_each(LANGUAGES, create_element);
+    }
+  
 
 // G / VG (see details in specification)
 // CODE according to specifications
 function create_programme (programme) {
+  const programme_parent = document.querySelector("#programmes > ul");
+    const new_programme = document.createElement("div");
+    new_programme.classList.add("programme");
+    programme_parent.appendChild(new_programme);
+
+    
+    new_programme.innerHTML = `
+    <div>
+      <p>${programme.name}</p> 
+      <p>${UNIVERSITIES[programme.universityID].name}</p> 
+      <p>
+        ${CITIES[UNIVERSITIES[programme.universityID].cityID].name}, 
+        ${COUNTRIES[CITIES[UNIVERSITIES[programme.universityID].cityID].countryID].name}  
+      </p>
+      <p>${LEVELS[programme.levelID - 1].name}, ${SUBJECTS[programme.subjectID].name}, ${LANGUAGES[programme.languageID].name}</p>
+      <p></p>
+    </div>
+    <div class="bottom_programme">
+      <p>${CITIES[UNIVERSITIES[programme.universityID].cityID].name}, sun-index: ${CITIES[UNIVERSITIES[programme.universityID].cityID].sun} (${percenter(CITIES[UNIVERSITIES[programme.universityID].cityID].sun, 365)}%)</p>
+    </div>`
   
   /*
 
@@ -237,8 +261,8 @@ function create_programme (programme) {
     NO RETURN VALUE
 
   */  
-
 }
+
 
 
 // G
