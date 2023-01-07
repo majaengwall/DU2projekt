@@ -86,6 +86,21 @@ body {
   background-repeat: no-repeat;
 }
 
+#top_images>div:nth-child(1) {
+  background-position: center;
+  background-image: ("./geo_images/madrid_normal_1.jpg");
+}
+
+#top_images>div:nth-child(2) {
+  background-position: center;
+  background-image: ("./geo_images/australia_normal_1.jpg");
+}
+
+#top_images>div:nth-child(3) {
+  background-position: center;
+  background-image: ("./geo_images/london_normal_1.jpg");
+}
+
 #top_text {
   position: relative;
   z-index: 10;
@@ -94,6 +109,7 @@ body {
   border: 1px solid white;
   background-color: rgba(255,255,255,.5);
 }
+
 #top_text * {
   font-size: 40px;
   text-shadow: 0 0 10px white;
