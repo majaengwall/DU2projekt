@@ -220,7 +220,7 @@ Create Search Field
 // G / VG (see details in specification)
 // CODE according to specifications
 function create_programme (programme) {
-  document.querySelector("#programmes > p").innerHTML = "";
+   document.querySelector("#programmes > p").innerHTML = "";
   const programme_parent = document.querySelector("#programmes > ul");
     const new_programme = document.createElement("div");
     new_programme.classList.add("programme");
@@ -269,6 +269,7 @@ function create_programme (programme) {
 // G
 // CODE according to the specification
 function update_programmes () {
+  document.querySelector("#programmes > ul").innerHTML = "";
   let numbers_of_programmes = read_filters();
   let programmes_shown_before = document.querySelector("#programmes > ul");
   let programmes_paragraf = document.querySelector("#programmes > p");
