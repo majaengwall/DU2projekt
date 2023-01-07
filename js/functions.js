@@ -162,7 +162,7 @@ function create_countries_cities_filters () {
 //    As you can see, all three functions below do basically the same thing.
 //    Abstract them to one function, and write the specification of that function.
 
-/*function create_filter(filter_type, DATA) {
+function create_filter(filter_type, DATA) {
   function create(data) {
     const dom = create_filter_element({
       parent: document.querySelector(`#${filter_type}_filter > ul`),
@@ -172,10 +172,10 @@ function create_countries_cities_filters () {
     dom.dataset.id = data.id;
   }
   array_each(DATA, create);
-}*/
+}
 
 
-
+/*
 function create_levels_filter () {
   function create_level (level) {
     const dom = create_filter_element({
@@ -190,7 +190,7 @@ function create_levels_filter () {
   }
 
 
-/*Create Subjects Filter*/
+Create Subjects Filter
   function create_subjects_filter () {
    function create_subject (subject) {
       const dom = create_filter_element({
@@ -203,7 +203,7 @@ function create_levels_filter () {
    array_each(SUBJECTS, create_subject);
   }
 
-/*Create Search Field*/
+Create Search Field
   function create_language_filter () {
     function create_element (data) {
         const dom = create_filter_element({
@@ -214,7 +214,7 @@ function create_levels_filter () {
         dom.dataset.id = data.id;
     }
     array_each(LANGUAGES, create_element);
-    }
+    }*/
   
 
 // G / VG (see details in specification)
