@@ -220,6 +220,7 @@ Create Search Field
 // G / VG (see details in specification)
 // CODE according to specifications
 function create_programme (programme) {
+  document.querySelector("#programmes > p").innerHTML = "";
   const programme_parent = document.querySelector("#programmes > ul");
     const new_programme = document.createElement("div");
     new_programme.classList.add("programme");
