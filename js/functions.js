@@ -3,6 +3,9 @@
 // CODE According to specification
 function click_filter_element (event) {
 
+  event.currentTarget.classList.toggle("selected");
+  update_programmes();
+
   /*
     ARGUMENTS
       event: event-object created when user clicks on one of the filter elements.
@@ -18,13 +21,25 @@ function click_filter_element (event) {
     NO RETURN VALUE
 
   */
-  
 }
 
 
 // G
 // CODE according to specification
 function create_filter_element (data) {
+
+  let button = document.querySelector("button");
+  button.classList.add(data.class);
+  button.addEventListener("click", toggle.cities);
+
+  const create_li = document.createElement("li");
+  data.parent.append(create_li);
+  create_li.classList.add(data.class);
+  create_li.textContent = data.textContent;
+  create_li.addEventListener("click", click_filter_element);
+
+  return create_li;
+
 
   /*
     ARGUMENTS
@@ -45,6 +60,8 @@ function create_filter_element (data) {
     RETURN VALUE
       Returns a reference to the new dom-element
   */
+
+    
 
 }
 
