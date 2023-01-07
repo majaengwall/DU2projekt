@@ -162,7 +162,17 @@ function create_countries_cities_filters () {
 //    As you can see, all three functions below do basically the same thing.
 //    Abstract them to one function, and write the specification of that function.
 
-
+function create_filter(filter_type, DATA) {
+  function create(data) {
+    const dom = create_filter_element({
+      parent: document.querySelector(`#${filter_type}_filter > ul`),
+      class: "selected",
+      textContent: data.name,
+    });
+    dom.dataset.id = data.id;
+  }
+  array_each(DATA, create);
+}
 
 
 
