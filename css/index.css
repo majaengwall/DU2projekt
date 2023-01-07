@@ -87,19 +87,19 @@ body {
 }
 
 #top_images>div:nth-child(1) {
-  background-color: black;
   background-position: center;
-  background-image: ("./geo_images/madrid_normal_1.jpg");
+  background-image: url(../geo_images/madrid_normal_1.jpg);
 }
 
 #top_images>div:nth-child(2) {
   background-position: center;
-  background-image: ("./geo_images/australia_normal_1.jpg");
+  background-image: url(../geo_images/australia_normal_1.jpg);
 }
 
 #top_images>div:nth-child(3) {
+  background-image: url(../geo_images/london_normal_1.jpg);
   background-position: center;
-  background-image: ("./geo_images/london_normal_1.jpg");
+
 }
 
 #top_text {
