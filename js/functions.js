@@ -30,7 +30,7 @@ function create_filter_element (data) {
 
   let button = document.querySelector("button");
   button.classList.add(data.class);
-  button.addEventListener("click", toggle.cities);
+  button.addEventListener("click", toggle_cities);
 
   
   const create_li = document.createElement("li");
