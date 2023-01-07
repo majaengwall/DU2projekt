@@ -60,9 +60,6 @@ function create_filter_element (data) {
     RETURN VALUE
       Returns a reference to the new dom-element
   */
-
-    
-
 }
 
 
@@ -112,6 +109,17 @@ function toggle_cities (event) {
 // WRITE SPECIFICATION
 // ATTENTION: You need to write the specification of all three functions:
 //            create_countries_cities_filters, create_country and create_city
+//
+// funktion create_countries_cities_filters:
+// Denna funktion tar inte emot några argument men när den anropas används array_each för att anropa funktioner som finns i create_city och create_city.
+//
+// funktion create_country:
+// Denna funktion tar emot argumentet country, det är en variabel för var index i countries arrayen. Den gör en div med country och filter_container och ger den då id från arrayen. Den anropar även test_function som ger en array med de städer som har samma countryid som det som är valt.
+//
+// funktion create_city
+// Denna funktion tar emot argument city, det är en variabelför var index i city arrayen. Den öppnar ett objekt med nycklarna parent, class och textContent. Den ger också ett dataid till objektet baserat på stadens namn.
+//
+
 function create_countries_cities_filters () {
   function create_country (country) {
     const dom = document.createElement("div");
@@ -132,6 +140,7 @@ function create_countries_cities_filters () {
 
     array_each(cities, create_city);
   }
+
   function create_city (city) {
 
     const dom = create_filter_element({
@@ -151,41 +160,58 @@ function create_countries_cities_filters () {
 // ABSTRACT AND WRITE SPECIFICATION
 //    As you can see, all three functions below do basically the same thing.
 //    Abstract them to one function, and write the specification of that function.
-function create_levels_filter () {
-  function create_level (level) {
+
+function create_filter(filter_type, DATA) {
+  function create(data) {
     const dom = create_filter_element({
-      parent: document.querySelector("#level_filter > ul"),
-      class: "selected",
-      textContent: level.name,
-    });
-    dom.dataset.id = level.id;
-  }
-  array_each(LEVELS, create_level);
-}
-// Create Subjects Filter
-function create_subjects_filter () {
-  function create_subject (subject) {
-    const dom = create_filter_element({
-      parent: document.querySelector("#subject_filter > ul"),
-      class: "selected",
-      textContent: subject.name,
-    });
-    dom.dataset.id = subject.id;
-  }
-  array_each(SUBJECTS, create_subject);
-}
-// Create Search Field
-function create_language_filter () {
-  function create_element (data) {
-    const dom = create_filter_element({
-      parent: document.querySelector("#language_filter > ul"),
+      parent: document.querySelector(`#${filter_type}_filter > ul`),
       class: "selected",
       textContent: data.name,
     });
     dom.dataset.id = data.id;
   }
-  array_each(LANGUAGES, create_element);
+  array_each(DATA, create);
 }
+
+// funktion create_filter
+// Tar emot argumenten filter_type och DATA. Den anropar sen funktionen create som gör ett objekt med nycklarna parent, class och textcontent. De ger sen ett dataid till objektet med array.name
+//
+
+//  function create_levels_filter () {
+//    function create_level (level) {
+//      const dom = create_filter_element({
+//        parent: document.querySelector("#level_filter > ul"),
+//        class: "selected",
+//        textContent: level.name,
+//     });
+//      dom.dataset.id = level.id;
+//    }
+//    array_each(LEVELS, create_level);
+//  }
+// Create Subjects Filter
+//  function create_subjects_filter () {
+//   function create_subject (subject) {
+//      const dom = create_filter_element({
+//        parent: document.querySelector("#subject_filter > ul"),
+//        class: "selected",
+//       textContent: subject.name,
+//      });
+//      dom.dataset.id = subject.id;
+//   }
+//   array_each(SUBJECTS, create_subject);
+//  }
+// Create Search Field
+//  function create_language_filter () {
+//  function create_element (data) {
+//      const dom = create_filter_element({
+//        parent: document.querySelector("#language_filter > ul"),
+//        class: "selected",
+//        textContent: data.name,
+//     });
+//      dom.dataset.id = data.id;
+//   }
+//   array_each(LANGUAGES, create_element);
+//  }
 
 
 // G / VG (see details in specification)
