@@ -227,7 +227,7 @@ function update_programmes () {
     programmes_shown_before.innerHTML = "";
   }
   array_each(numbers_of_programmes, create_programme);
-  
+
   /*
       NO ARGUMENTS
 
@@ -347,3 +347,9 @@ function read_filters () {
 
   return programmes;
 }
+// read_filters tar inte emot några argument.
+// Skapar en variabel som är en referens rill en nodelist vilket är alla valde li taggar i country_filter. De anropar sen array_each med variabeln och vallback funktionen. Då görs en array med nodelistan och nycklarnasid för de element som blir översatta till sträng.
+// Variabel universities lopar igenom alla element i arrayen som är skapad i förra funktionen. Sen gör den en ny variabel av var index i den arrayen. Sen loopar den igenom och skapar en ny variabel för var index. Variablernas id jämförs och om de är samma läggs de in i en ny array.
+// Programme deklarerar en tom array. Parametern array och callback funktionen anropar array_each. Callback funktionen skapar en ny variabel av de index som finns i och deras id. Sen loopas programmes och gör var index till en ny variabel. Om alla index av programmes nyckel id matchar med etablerad variabel så pushas c in i x.
+// Funktionerna levels, languages och subjects gör alla samma sak men med olika värden. 
+// Det skapas en ny variabel med referens till en nodelist av de valda li elementen från sina föräldrar med namn baserat på dom olika värdena Z och _selected_dom. Det deklareras en tom array. Genom array_each anropas callback funktionen och Z. Callback omvandlar indexen i Z nycelnd id till sträng. Värdet av X uppdateras med array_filter genom värdena X och test_function. testfunktionen returnerar index från R om den har med X.Z id. Det deklarereas en variabel som är en referens till input-elements värde. test-function körs om variabelns värde inte är tomt. Om index av X med nyckeln name inkluderas returnerar test function en ny array. Och X värde uppdateras med array_filter som anropas med värdena X och test_function. Sen returnerar funktionen array programmes.
