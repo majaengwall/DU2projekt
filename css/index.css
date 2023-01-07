@@ -87,6 +87,7 @@ body {
 }
 
 #top_images>div:nth-child(1) {
+  background-color: black;
   background-position: center;
   background-image: ("./geo_images/madrid_normal_1.jpg");
 }
